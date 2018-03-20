@@ -1,0 +1,44 @@
+{
+  "name": "leofcoin-hash",
+  "version": "0.1.0",
+  "main": "dist/leofcoin-hash-node.js",
+  "module": "dist/leofcoin-hash-es.js",  
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leofcoin/leofcoin-hash.git"
+  },
+  "keywords": [
+    "leofcoin",
+    "hash",
+    "keccak"
+  ],
+  "bugs": {
+    "url": "https://github.com/leofcoin/leofcoin-hash/issues"
+  },
+  "homepage": "https://github.com/leofcoin/leofcoin-hash#readme",
+  "author": "vandeurenglenn",
+  "license": "MIT",
+  "backed": {
+    "bundles": [
+      {
+        "src": "src/index.js",
+        "dest": "dist/leofcoin-hash.js",
+        "format": "es"
+      },
+      {
+        "src": "src/index.js",
+        "dest": "dist/leofcoin-hash.js",
+        "format": "cjs"
+      }
+    ]
+  },
+  "dependencies": {
+    "keccak": "^1.4.0"
+  },
+  "devDependencies": {
+    "tape": "^4.9.0"
+  }
+}

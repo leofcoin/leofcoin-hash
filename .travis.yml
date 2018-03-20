@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+- 6
+- 8
+
+cache:
+  yarn: true
+  directories:
+    - 'node_modules'
+    - $(npm config get prefix)/lib/node_modules
+
+before_script:
+- yarn global add backed-cli
+- backed -b
+  
+deploy:
+  skip_cleanup: true
+  provider: npm
+  email: vandeurenglenn@gmail.com
+  api_key:
+    secure: rY1mSTs1v6BamWP/1TRyx3d7v9s05csJpfal5efHB/vVeRRI1HM7FNVti7MDPp7tVyCQ6oqDJhEj3tQRfed+RsX2Kpx0L3Dpk90JlY05TNjYgQf7edSAEx2rUXSGEIhfWrTa1ZV+RoKQIk+HWkOuuAbRrZmh6eAg8rJtv5UpTtGlZNT8A8HSOckgaPQMPG8fE6EpsMfB1xlrG7xK+7y7TkSB10rS+V6gHPwy0ecMAXuIies26o1NCANd46cf7J4xhrzC7Jgo3mgga3M+s+1/bpUxGlDNm5XFFg1PXj9Py1zYMK4Z15XCHDno/fvcpJ/euDQKuO9PyNPw5UEug7dKPPPKBIzOO216KMtokdgClkzu+vqwX4kJVgkmV/OTUgXjKKgHiG8SRXKLmQdEDL7ZKKOmT1+qCgkOrsE06JuPZfIR23+SVpx5kXdVRKMtJGdh7gy/n6cumxlEoSLKjmRVLgGeUs817/XzzO091sT4PDhP0jieuAMN0gWoaLIkrUrlWj6D4vULp6+Gg7sVm455iayB8cpc0pEmfgfPspGyOWFT1Gba//8Li5sxkc/XDKRlNG6SO1THppwf2nGBHqON8Kd17CdarQEs6WxXZMcuNBzHByFlIMsu6/LkxO0rcNod/55vEc2YF3QDO3wfY1FCggSrhykI3hcIGmu/FiryoMk=
+  on:
+    tags: true
+    repo: leofcoin/leofcoin-hash
